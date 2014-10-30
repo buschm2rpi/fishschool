@@ -1,0 +1,21 @@
+%This code is for the topological model (fish interact with a fixed number of nearest neighbors according to a delaunay triangulation)
+%You need to install the CGAL library: http://www.cgal.org/
+%This computational geometry library has code that does a delaunay triangulation that is called by the main file fishD.cpp (The D stands for Delaunay)
+
+%Main file: fishD.cpp
+
+%Helper files: 
+(1) delaunay.cpp (For delaunay triangulation) which utilizes the CGAL library
+(2) genmtrand.c (Mersenne Twister Algorithm to generate random numbers)
+
+%Header files:
+(1) dci.h (For MT Algorithm)
+(2) fish.h (Important parameters for main file-some are not used and came from GPU version of the code which is why they have names like BLOCKSIZE and ARRAYSIZE.  I was eventually going to put this code on the GPU but didn't have a chance.  The important ones are FISHNUM (# of fish in simulation), MAXSTEPS (iterations of algorithm), and SETRATIO (ratio of orientation to attraction influence)
+
+%Compile instructions (there is a makefile)
+
+Compile by typing make fishD
+
+%Included m-files
+Some m-files are included to process the data in MATLAB (the code spits out the positions and directions of every member of the school at each timestep of the algorithm as a text file)
+(1) plotsample.m (plots the school at a step k)-it would be probably easier to make this a function so you don't have to alter the code each time you want to look at a different timestep!

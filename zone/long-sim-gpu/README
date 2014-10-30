@@ -1,0 +1,4 @@
+Run all commands from this directory. Open a terminal and type:
+
+make
+./bin/release/fish_gpu
